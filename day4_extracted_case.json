@@ -1,0 +1,51 @@
+{
+  "case_id": "37199313",
+  "visa_type": "O-1",
+  "case_type": "appeal",
+  "beneficiary_role": "goalkeeper program director",
+  "decision_outcome": "dismissed",
+  "decision_date": "2025-02-25",
+  "service_center": "California Service Center",
+  "aao_docket_number": null,
+  "regulatory_citations": [
+    "section 101(a)(15)(O)(i) of the Act",
+    "8 U.S.C. \u00a7 1101(a)(15)(O)(i)",
+    "8 C.F.R. \u00a7 103.3",
+    "8 C.F.R. \u00a7 214.2(o)(3)(ii)",
+    "8 C.F.R. \u00a7 214.2(o)(3)(iii)(A)-(B)",
+    "8 C.F.R. \u00a7 214.2(o)(3)(iii)(C)",
+    "8 C.F.R. \u00a7 103.2(b)(11)",
+    "8 C.F.R. \u00a7 214.2(o)(3)(iii)(B)(1)",
+    "8 C.F.R.\u00a7 214.2(o)(3)(iii)(B)(2)",
+    "8 C.F.R. \u00a7 214.2(o)(3)(iii)(B)(3)"
+  ],
+  "issues": [
+    "Petitioner did not meet consultation requirement",
+    "Petitioner did not show Beneficiary satisfied at least three of eight possible forms of documentation",
+    "New evidence and claims submitted on appeal not considered",
+    "Beneficiary does not have a major, internationally recognized award",
+    "Beneficiary did not meet the awards criterion",
+    "Beneficiary did not meet the memberships criterion",
+    "Published materials criterion not clearly established"
+  ],
+  "criteria_met": [
+    "critical or essential capacity under 8 C.F.R. \u00a7 214.2(o)(3)(B)(iii)(7)"
+  ],
+  "criteria_not_met": [
+    "documentation of receipt of nationally or internationally recognized prizes or awards",
+    "documentation of membership in associations requiring outstanding achievements judged by recognized experts",
+    "published material in professional or major trade publications or major media about the alien"
+  ],
+  "procedural_issues": [
+    "new evidence submitted on appeal was not considered as it was not presented before the Director"
+  ],
+  "key_evidence": [
+    "screenshots from globo.com reporting the Brazilian women's team won the tournament",
+    "photograph purportedly of the Beneficiary holding a trophy",
+    "screenshots from Wikipedia about the tournament",
+    "various training and preparation certificates for the Beneficiary",
+    "published articles that talk about the beneficiary as a coach (incomplete record)"
+  ],
+  "risk_factors": [],
+  "notes": "The appeal was dismissed because the petitioner failed to submit sufficient evidence meeting at least three regulatory criteria for the O-1 visa classification. New evidence submitted on appeal was not considered."
+}
