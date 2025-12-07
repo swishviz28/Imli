@@ -47,20 +47,20 @@ def save_cached_case(url: str, data: dict):
         json.dump(data, f, indent=2)
 
 
-def process_uscis_case(url: str):
+def process_uscis_case(url: str) -> dict:
     """
     On-demand pipeline:
     - Check cache
     - If not cached, download PDF once, extract text, call OpenAI
     - Store only JSON locally (no PDF), so we don't re-hit the USCIS URL
+    - Return the structured JSON data as a Python dict
     """
 
     # 1) Check cache first
     cached = get_cached_case(url)
     if cached is not None:
         print(f"📦 Using cached structured data for URL:\n{url}\n")
-        print(json.dumps(cached, indent=2))
-        return
+        return cached
 
     # 2) Not cached: fetch PDF once
     print(f"🔗 Fetching PDF from: {url}")
@@ -71,7 +71,7 @@ def process_uscis_case(url: str):
     full_text = extract_text_from_pdf_bytes(pdf_bytes)
     text_chunk = full_text[:12000]
 
-    # 4) Build prompt (same strict, no-hallucination rules)
+    # 4) Build prompt (strict, no-hallucination rules)
     system_message = (
         "You are an expert U.S. immigration law assistant. "
         "Given a USCIS or AAO decision, you extract key case facts into a strict JSON object. "
@@ -135,15 +135,14 @@ Decision text:
         print(raw_content)
         raise
 
-    print("\n📦 Structured extraction from URL:")
-    print(json.dumps(data, indent=2))
-
-    # 7) Save to cache so we never re-hit this URL unless you delete the file
+    # 7) Save to cache and return
     save_cached_case(url, data)
     print(f"\n✅ Saved structured data to cache in '{CASES_DIR}'")
+    return data
 
 
 if __name__ == "__main__":
-    # TODO: replace this with a real USCIS/AAO PDF URL when testing
+    # Example manual test; replace with a real URL if you want
     test_url = "https://www.uscis.gov/sites/default/files/err/B5%20-%20Members%20of%20the%20Professions%20holding%20Advanced%20Degrees%20or%20Aliens%20of%20Exceptional%20Ability/Decisions_Issued_in_2025/MAR122025_01B5203.pdf"
-    process_uscis_case(test_url)
+    result = process_uscis_case(test_url)
+    print(json.dumps(result, indent=2))
