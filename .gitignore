@@ -2,3 +2,12 @@ venv/
 .env
 __pycache__/
 cases/
+# Ignore SQLite databases
+*.db
+
+# Ignore Flask instance folders if they ever exist
+instance/
+instances/
+
+# (Optional) Ignore test PDFs
+*.pdf
